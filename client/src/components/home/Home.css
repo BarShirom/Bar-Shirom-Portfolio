@@ -1,0 +1,102 @@
+.home-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f4ff, #ffffff);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .home-content {
+    max-width: 1200px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .home-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .home-header h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+  
+  .home-text p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 2rem;
+  }
+  
+  .home-button button {
+    background-color: #4a3aff;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 90px;
+  }
+  
+  .home-button button:hover {
+    background-color:  #372ecc;
+  }
+  
+  .home-image {
+    margin-top: 3rem;
+  }
+  
+  .home-image img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #4a3aff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .home-image img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive design */
+  @media (min-width: 768px) {
+    .home-content {
+      flex-direction: row;
+      text-align: left;
+      gap: 3rem;
+    }
+  
+    .home-header,
+    .home-text,
+    .home-button {
+      flex: 1;
+      align-items: flex-start;
+    }
+  
+    .home-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0;
+    }
+  }
