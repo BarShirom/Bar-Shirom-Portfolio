@@ -39,7 +39,7 @@ const AboutMe = () => {
           </p>
           <div className="cv-buttons">
             <a
-              href="/Bar-Shirom-Full-Stack-Resume-2025 (1).pdf"
+              href="/Bar-Shirom-Full-Stack-Resume-2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="cv-button"
@@ -47,7 +47,7 @@ const AboutMe = () => {
               View CV
             </a>
             <a
-              href="/Bar-Shirom-Full-Stack-Resume-2025 (1).pdf"
+              href="/Bar-Shirom-Full-Stack-Resume-2025.pdf"
               download
               className="cv-button secondary"
             >
