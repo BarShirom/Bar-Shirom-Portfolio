@@ -1,6 +1,5 @@
 import "./AboutMe.css";
-import aboutImage from "../../assets/bar-linkedin.jpg"; // same image or use a different one
-
+import aboutImage from "../../assets/bar-linkedin.jpg";
 const AboutMe = () => {
   return (
     <section className="about-container">
@@ -39,7 +38,7 @@ const AboutMe = () => {
           </p>
           <div className="cv-buttons">
             <a
-              href="/Bar-Shirom-Full-Stack-Resume-2025.pdf"
+              href="/BAR_SHIROM_-_Full_Stack_Developer.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="cv-button"
@@ -47,7 +46,7 @@ const AboutMe = () => {
               View CV
             </a>
             <a
-              href="/Bar-Shirom-Full-Stack-Resume-2025.pdf"
+              href="/BAR_SHIROM_-_Full_Stack_Developer.pdf"
               download
               className="cv-button secondary"
             >
