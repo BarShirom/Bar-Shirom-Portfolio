@@ -1,13 +1,12 @@
 export const projects = [
   {
-    title: "Ray – Make Street Cats Visible",
+    title: "Ray – Make stray Cats Visible",
     description:
       "Full-stack real-time platform for reporting, tracking, and managing stray cat emergencies. Includes interactive map, role-based access, and live incident updates.",
     tech: [
       "React",
       "TypeScript",
       "Redux Toolkit",
-      "Socket.IO",
       "Leaflet",
       "Node.js",
       "Express",
