@@ -54,4 +54,14 @@ export const skills = [
     icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg",
     link: "https://www.mysql.com/",
   },
+  {
+    name: "Python",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg",
+    link: "https://www.python.org/",
+  },
+  {
+    name: "PostgreSQL",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg",
+    link: "https://www.postgresql.org/",
+  },
 ];
