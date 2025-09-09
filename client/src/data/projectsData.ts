@@ -2,7 +2,8 @@ export const projects = [
   {
     title: "Ray – Make stray Cats Visible",
     description:
-      "Full-stack real-time platform for reporting, tracking, and managing stray cat emergencies. Includes interactive map, role-based access, and live incident updates.",
+      "A full-stack platform for helping stray cats in real time. Built with React, TypeScript, Leaflet, Redux Toolkit, Node.js, Express, MongoDB",
+
     tech: [
       "React",
       "TypeScript",
@@ -10,11 +11,12 @@ export const projects = [
       "Leaflet",
       "Node.js",
       "Express",
-      "MongoDB",
       "JWT",
+      "MongoDB",
+      "cloudinary",
     ],
     github: "https://github.com/BarShirom/ray",
-    demo: "",
+    demo: "https://ray-opal.vercel.app",
   },
   {
     title: "PetsAreTheBest",
