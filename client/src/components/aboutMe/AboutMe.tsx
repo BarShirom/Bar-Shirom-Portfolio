@@ -13,12 +13,13 @@ const AboutMe = () => {
         {/* Right: Text */}
         <div className="about-text">
           <p>
-            Proactive Full-Stack Developer with expertise in React, Node.js, and
-            MongoDB. Skilled at designing and delivering end-to-end web
-            applications with clean, maintainable code. A fast learner and
-            problem-solver, expanding into TypeScript, Redux Toolkit, and
-            Python. Strong team player with a passion for building impactful,
-            user-focused solutions.
+            Proactive Full-Stack Developer with hands-on experience in React,
+            TypeScript, Node.js, MongoDB, and a growing passion for
+            Artificial Intelligence. Skilled in building scalable web
+            applications from concept to deployment. Currently expanding
+            expertise in Python, Large Language Models (LLMs), Natural Language
+            Processing (NLP), and modern AI ecosystems-including Transformers,
+            LangChain, and vector databases.
           </p>
           <div className="cv-buttons">
             <a
