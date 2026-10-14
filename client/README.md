@@ -1,54 +1,58 @@
-# React + TypeScript + Vite
+# Bar Shirom portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React 19 + TypeScript + Vite, plain CSS, React Router, and EmailJS. Deployment remains on Vercel. No backend or new runtime dependencies were added.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Use Node.js 22 and npm (package-lock.json).
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+cd client
+npm ci
+npm run dev -- --host 127.0.0.1 --port 5173
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open http://127.0.0.1:5173. On Windows, use `npm.cmd` if PowerShell blocks `npm.ps1`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```sh
+npm run typecheck
+npm run lint
+npm run build
+npm run preview -- --host 127.0.0.1
 ```
+
+For the offline contact behavior suite, start the dev server and open http://127.0.0.1:5173/tests/contact.html. It runs 11 assertions against the actual React component with injected senders: pending, duplicate submits, success, failure, draft retention, retry, and missing configuration. It makes **no EmailJS requests**. Tests are typechecked and linted, and excluded from the production entry.
+
+## Edit content
+
+- `src/data/profileData.ts`: public contact links, biography, education. Update the explicit AI program status only after attendance is confirmed.
+- `src/data/projectsData.ts`: typed projects, statuses, source links, case studies, gallery captions.
+- The Sales Agent case study groups its verified stack by interface, API, testing, containers, and release verification. About summarizes the same project; distinguish deployment preparation from public hosting.
+- `src/data/skillsData.ts`: skills and learning groups.
+- `src/App.css`: shared visual system and responsive styles.
+- `public/images/`: project assets, synthetic demo screenshots, social-sharing image.
+- `index.html`: SEO metadata and canonical URL.
+
+The homepage uses native expandable case studies. Original routes `/aboutMe`, `/portfolio`, `/skills`, and `/contact` remain supported. No new case-study routes are required.
+
+## EmailJS
+
+Copy `.env.example` to `.env` only if no local configuration exists. Set these names locally and in the existing Vercel project:
+
+- `VITE_EMAILJS_SERVICE_ID`
+- `VITE_EMAILJS_TEMPLATE_ID`
+- `VITE_EMAILJS_PUBLIC_KEY`
+
+These are browser-facing EmailJS identifiers; never put private API keys or other secrets in `VITE_*` variables. Template fields remain `user_name`, `user_email`, and `message`. Missing configuration disables the form and keeps the email fallback available. Success is shown only for a successful provider response. Tests use mocks; live delivery is not verified.
+
+## Existing deployment
+
+Vercel uses `client` as the app directory, `npm run vercel-build`, and `dist` output. `vercel-build` now runs the same TypeScript-checked build as local development. The existing `vercel.json` SPA rewrite supports direct route loads and refresh.
+
+The existing portfolio is accessible at https://barshirom.com/, which is now used for canonical and social metadata. GitHub previously linked the Vercel address. On an authorized release, verify the social image at the custom domain after the new build is deployed. Fonts load from Google Fonts with system fallbacks.
+
+Publish through the existing Vercel workflow only after explicit owner approval.
+
+See [content verification and remaining checks](../docs/content-verification.md). The owner has chosen to omit a CV download and employment history from the site. Education remains visible.
+
+The current opening is text only, with no portrait. Public copy avoids dash punctuation. The footer uses the same identity and contact links as the rest of the site.
