@@ -6,10 +6,9 @@ export const profile = {
     linkedin: 'https://www.linkedin.com/in/bar-shirom/',
     headline: 'Full Stack Developer building AI powered products.',
     about: [
-        'I build web applications with React, TypeScript and Node.js, from interfaces and APIs to databases and deployment. My background in sales and customer success helps me turn customer needs into practical software.',
-        'My Moving Services Sales Agent combines React, Vite and CSS with an Express API. The OpenAI Node SDK, Responses API, Structured Outputs and Zod turn Hebrew conversations into structured leads, with pricing rules and human approval kept separate from the model.',
-        'I use the Node.js test runner, JSDOM and tsx for automated checks, plus offline evaluations for the sales workflow. Git and npm workspaces support development; Docker, Docker Compose and Caddy support deployment preparation. The case study includes the full stack and container verification tools.',
-        'In RAY, I’m developing community cat care workflows, a PostgreSQL preview and private media storage with Amazon S3. I’m also developing my Python skills and preparing for the AI Engineering program at Hebrew University Executive Education, starting October 20, 2026.',
+        'Full Stack Developer building AI powered products. I build end-to-end web applications using React, TypeScript, Node.js and Python, from frontend and backend development to APIs, SQL and NoSQL databases, Docker, AWS and cloud deployment.',
+        'Starting in October 2026, I’ll be studying AI Engineering at the Hebrew University of Jerusalem, with a focus on machine learning, deep learning, LLMs, RAG, AI agents and production AI systems.',
+        'I enjoy turning real-world problems and ideas into working products, from initial concept through development and deployment.',
     ],
 };
 export interface TimelineEntry {
