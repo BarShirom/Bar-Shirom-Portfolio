@@ -6,7 +6,7 @@ export default function Layout() {
     <a className="skip-link" href="#main">Skip to content</a>
     <Navbar />
     <main id="main" tabIndex={-1}><Outlet /></main>
-    <footer className="footer shell">
+    <footer className="site-footer"><div className="footer shell">
       <div className="footer-brand"><a className="wordmark" href="/">{profile.name}</a><p>Full Stack Developer · AI & Automation</p></div>
       <nav className="footer-links" aria-label="Footer navigation">
         <a href={'mailto:' + profile.email}>Email</a>
@@ -14,6 +14,6 @@ export default function Layout() {
         <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span><span className="sr-only"> (opens in a new tab)</span></a>
       </nav>
       <div className="footer-meta"><p>© {new Date().getFullYear()} {profile.name}</p><a href="#main">Back to top <span aria-hidden="true">↑</span></a></div>
-    </footer>
+    </div></footer>
   </>;
 }

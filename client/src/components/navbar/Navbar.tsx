@@ -1,9 +1,16 @@
-import { Link } from 'react-router-dom';
-import { profile } from '../../data/profileData';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 export default function Navbar() {
-    return <header className="site-header">
+    const { pathname } = useLocation();
+    const [scrolled, setScrolled] = useState(() => window.scrollY > 24);
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 24);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+    const solid = pathname !== '/' || scrolled;
+    return <header className={'site-header' + (solid ? ' is-solid' : '')}>
     <div className="shell nav-inner">
-      <Link className="wordmark" to="/">{profile.name}</Link>
       <nav aria-label="Main navigation">
         <Link to="/#projects">Projects</Link>
         <Link to="/#about">About</Link>

@@ -38,7 +38,7 @@ export default function App() {
         <Route path="/portfolio" element={<div className="standalone"><h1 className="sr-only">Selected projects</h1><Portfolio /></div>}/>
         <Route path="/skills" element={<div className="standalone"><h1 className="sr-only">Technical skills</h1><Skills /></div>}/>
         <Route path="/contact" element={<div className="standalone"><h1 className="sr-only">Contact Bar Shirom</h1><Contact /></div>}/>
-        <Route path="*" element={<section className="section not-found"><p className="eyebrow">404</p><h1>This page isn’t here.</h1><a className="button" href="/">Back to home <span aria-hidden="true">↗</span></a></section>}/>
+        <Route path="*" element={<section className="section not-found"><p className="eyebrow">404</p><h1>This page isn’t here</h1><a className="button" href="/">Back to home <span aria-hidden="true">↗</span></a></section>}/>
       </Route>
     </Routes>
   </BrowserRouter>;

@@ -16,18 +16,20 @@ function Timeline({ entries }: {
 }
 export default function Home() {
     return <>
-    <section className="hero shell" aria-labelledby="hero-title">
-      <div className="hero-copy">
-        <p className="availability"><span aria-hidden="true"/>Open to development opportunities</p>
-        <p className="hero-intro">Hi, I'm Bar Shirom</p>
-        <h1 id="hero-title">Full Stack Developer <br />building <span>AI powered products.</span></h1>
+    <section className="hero" aria-labelledby="hero-title">
+      <div className="hero-copy shell">
+        <h1 id="hero-title">
+          <span className="hero-intro">Hi, I'm Bar Shirom</span>{' '}
+          <span className="hero-role">Full Stack Developer</span>{' '}
+          <span className="hero-building">building AI powered products</span>
+        </h1>
         <div className="hero-actions">
           <a className="button" href="#projects">View Projects <span aria-hidden="true">↘</span></a>
           <a className="social-link" href={profile.github} target="_blank" rel="noreferrer"><FaGithub aria-hidden="true"/>GitHub <span className="sr-only">(opens in a new tab)</span></a>
           <a className="social-link" href={profile.linkedin} target="_blank" rel="noreferrer"><FaLinkedinIn aria-hidden="true"/>LinkedIn <span className="sr-only">(opens in a new tab)</span></a>
         </div>
       </div>
-      <div className="hero-foot"><a href="#projects">Explore selected work <span aria-hidden="true">↓</span></a></div>
+      <div className="hero-foot shell"><a href="#projects">Explore selected work <span aria-hidden="true">↓</span></a></div>
     </section>
     <Portfolio />
     <AboutMe />

@@ -52,7 +52,7 @@ export default function Contact({ config = defaultConfig, send = defaultSender }
     }
     return <section className="contact-band" id="contact" aria-labelledby="contact-title">
     <div className="shell contact-grid">
-      <div className="contact-copy"><p className="eyebrow">05 / Get in touch</p><h2 id="contact-title">Have something <br />in mind? <br /><span>Let’s build it.</span></h2><p>For development opportunities, interesting projects, or a conversation about what I’m building.</p>
+      <div className="contact-copy"><p className="eyebrow">05 / Get in touch</p><h2 id="contact-title">Have something <br />in mind? <br /><span>Let’s build it</span></h2><p>For development opportunities, interesting projects, or a conversation about what I’m building.</p>
         <a className="email-link" href={'mailto:' + profile.email}>{profile.email}<span aria-hidden="true">↗</span></a>
         <div className="contact-socials"><a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗<span className="sr-only"> (opens in a new tab)</span></a><a href={profile.github} target="_blank" rel="noreferrer">GitHub ↗<span className="sr-only"> (opens in a new tab)</span></a><span>{profile.location}</span></div>
       </div>

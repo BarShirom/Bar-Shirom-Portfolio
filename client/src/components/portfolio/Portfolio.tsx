@@ -21,7 +21,11 @@ function ProjectCard({ project, index }: {
         {project.source && <a className="text-link" href={project.source} target="_blank" rel="noreferrer">Explore source <span aria-hidden="true">↗</span><span className="sr-only"> for {project.name} (opens in a new tab)</span></a>}
       </div>
     </div>
-    <details className="case-study">
+    <details className="case-study" onToggle={event => {
+        if (event.currentTarget.open && window.matchMedia('(min-width: 761px)').matches) {
+            event.currentTarget.scrollIntoView({ block: 'start' });
+        }
+    }}>
       <summary>Read the case study <span className="sr-only">for {project.name}</span><span className="details-hint" aria-hidden="true">Problem, decisions & verification</span><span className="expand-icon" aria-hidden="true">+</span></summary>
       <div className="case-content">
         <div className="case-intro"><div><p className="eyebrow">The problem</p><h4>Why this project exists</h4><p>{project.problem}</p></div><div><p className="eyebrow">My contribution</p><h4>What I worked on</h4><p>{project.contribution}</p></div></div>
@@ -37,9 +41,11 @@ function ProjectCard({ project, index }: {
   </article>;
 }
 export default function Portfolio() {
-    return <section className="section shell" id="projects" aria-labelledby="projects-title">
-    <div className="section-heading"><h2 className="eyebrow" id="projects-title">01 / Selected work</h2></div>
+    return <section className="section projects-section" id="projects" aria-labelledby="projects-title">
+    <div className="shell">
+    <div className="section-heading"><p className="eyebrow">01 / Selected work</p><h2 id="projects-title">Projects</h2></div>
     <div className="project-list">{projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index}/>)}</div>
     <div className="additional-project"><div><p className="eyebrow">Additional project</p><h3>{additionalProject.name}</h3><span className="small-status">{additionalProject.status}</span></div><p>{additionalProject.description}</p></div>
+    </div>
   </section>;
 }
