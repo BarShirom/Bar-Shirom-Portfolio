@@ -151,6 +151,9 @@ input::placeholder,textarea::placeholder { color:#776681; }
 }
 @media(max-width:480px) {
   .site-header nav a { font-size:.78rem; }
+  /* The fixed navigation overlays the Hero; svh keeps its opening stable as toolbars move. */
+  .hero { min-height:100vh; min-height:100svh; display:flex; flex-direction:column; }
+  .hero-copy { margin-block:auto; }
   .hero-actions { column-gap:19px; row-gap:14px; }
   .hero-actions .button { flex-basis:100%; max-width:225px; margin-inline:calc((100% - 225px) / 2); }
   .hero-foot { font-size:.72rem; margin-top:28px; }
