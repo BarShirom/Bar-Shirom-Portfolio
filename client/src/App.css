@@ -57,67 +57,6 @@ main:focus,section[tabindex="-1"]:focus { outline:none; }
 .hero-foot a:hover { color:white; text-decoration:underline; }
 .section-heading { margin-bottom:42px; }
 .section-heading>p:last-child:not(.eyebrow) { margin-top:16px; color:var(--muted); }
-.projects-section { background:var(--night); color:white; padding-block:56px 88px; }
-.projects-section>.shell>.section-heading .eyebrow,.additional-project .eyebrow { color:#c4b8ce; }
-.project-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; align-items:start; }
-.project-card { --line:#e3dce9; background:white; color:var(--ink); border-radius:28px; min-width:0; box-shadow:0 18px 36px #0003; display:flex; flex-direction:column; }
-.project-card:nth-child(1) { transform:rotate(-.8deg); }
-.project-card:nth-child(2) { transform:rotate(.8deg); }
-.project-card:focus-within,.project-card:has(.case-study[open]) { transform:none; }
-.project-main { display:grid; min-width:0; }
-.project-preview { min-width:0; margin:16px 16px 0; padding:18px; border-radius:18px; background:#f3eef7; }
-.preview-label { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px 12px; color:#665274; font-size:.69rem; letter-spacing:.035em; }
-.preview-image { height:250px; margin-block:16px; overflow:hidden; border-radius:10px; background:white; }
-.project-ray .preview-image { display:grid; place-items:center; }
-.project-ray .preview-image img { width:100%; height:100%; object-fit:contain; }
-.project-sales-agent .preview-image img { width:100%; height:auto; }
-.project-preview figcaption { font-size:.69rem; color:#665274; line-height:1.65; }
-.project-copy { padding:30px 34px 32px; }
-.project-copy .eyebrow { font-size:.69rem; letter-spacing:.09em; margin-bottom:12px; }
-.project-copy h3 { font-size:clamp(1.8rem,2.6vw,2.4rem); line-height:1.15; max-width:450px; }
-.status { display:inline-flex; align-items:center; gap:7px; font-size:.72rem; color:#714185; margin-top:16px; }
-.project-description { margin-block:20px; font-size:.92rem; color:#55465f; line-height:1.8; }
-.contribution { font-size:.83rem; line-height:1.8; color:var(--muted); }
-.contribution strong { display:block; font-size:.73rem; color:var(--ink); margin-bottom:5px; letter-spacing:.02em; }
-.tech-list { display:flex; flex-wrap:wrap; gap:8px; list-style:none; padding:0; margin:22px 0; font-size:.7rem; color:#624c72; }
-.tech-list li { background:#f5f0f8; padding:4px 10px; border-radius:99px; }
-.text-link { font-size:.8rem; font-weight:700; text-decoration:none; display:inline-flex; gap:22px; border-bottom:1px solid #baa5c7; padding-block:8px; }
-summary { list-style:none; }
-summary::-webkit-details-marker { display:none; }
-.case-study { border-top:1px solid var(--line); margin-top:auto; scroll-margin-top:110px; }
-.case-study>summary { display:flex; align-items:center; gap:12px; min-height:70px; padding:20px 32px; font-size:.82rem; font-weight:700; border-radius:0 0 28px 28px; }
-.case-study>summary:hover { background:#f7f2fa; }
-.case-study[open]>summary { border-radius:0; }
-.case-study>summary:focus-visible { outline-offset:-6px; }
-.details-hint { display:none; font-size:.73rem; color:var(--muted); font-weight:400; margin-left:auto; }
-.expand-icon { font-size:1.5rem; color:var(--accent); line-height:1; margin-left:auto; }
-.details-hint+.expand-icon { margin-left:auto; }
-details[open]>summary>.expand-icon { transform:rotate(45deg); }
-.case-content { padding:34px; color:#5c4c66; font-size:.9rem; border-top:1px solid var(--line); }
-.case-content h4 { color:var(--ink); margin-bottom:14px; }
-.case-intro { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px; margin-bottom:32px; }
-.case-intro .eyebrow { font-size:.7rem; }
-.decisions { padding-left:22px; margin:0 0 34px; }
-.decisions li { padding-left:10px; margin-top:14px; }
-.decisions li::marker { color:var(--accent); font-weight:700; }
-.project-stack { margin-bottom:34px; }
-.stack-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 36px; margin:0; }
-.stack-grid>div { border-top:1px solid var(--line); padding-top:16px; }
-.stack-grid dt { color:var(--ink); font-weight:700; margin-bottom:7px; }
-.stack-grid dd { margin:0; overflow-wrap:anywhere; }
-.gallery { border-top:1px solid var(--line); padding-top:32px; }
-.gallery>p { margin-bottom:24px; }
-.gallery-step { border-top:1px solid var(--line); }
-.gallery-step summary { display:flex; justify-content:space-between; gap:16px; padding:18px 0; }
-.gallery-step summary span { flex:none; }
-.gallery-step figure { max-width:680px; margin:12px auto 32px; }
-.gallery-step img { width:100%; height:auto; border-radius:12px; border:1px solid var(--line); }
-.gallery-step figcaption { margin-top:14px; font-size:.78rem; }
-.additional-project { display:grid; grid-template-columns:1fr 2fr; gap:40px; padding-top:36px; margin-top:64px; border-top:1px solid #ffffff30; }
-.additional-project h3 { font-size:1.8rem; }
-.additional-project .eyebrow { font-size:.7rem; margin-bottom:12px; }
-.small-status { font-size:.75rem; color:#c5b8cf; display:block; margin-top:10px; }
-.additional-project>p { font-size:.87rem; color:#cfc5d6; max-width:660px; }
 .about-band { background:#f1ecf6; padding-block:90px; }
 .about-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:85px; }
 .about-grid h2 { font-size:clamp(2.5rem,4.5vw,3.8rem); line-height:1.08; }
@@ -174,22 +113,9 @@ input::placeholder,textarea::placeholder { color:#776681; }
 .standalone .section { padding-top:72px; }
 .not-found { text-align:center; min-height:70vh; padding:180px 24px 90px; }
 .not-found .button { margin-top:32px; }
-/* Open studies span the content width to keep technical detail and captures readable. */
-@media(min-width:761px) {
-  .project-card:has(.case-study[open]) { grid-column:1/-1; }
-  .project-card:has(.case-study[open]) .project-main { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
-  .project-card:has(.case-study[open]) .project-preview { margin-bottom:16px; display:flex; flex-direction:column; }
-  .project-card:has(.case-study[open]) .preview-image { min-height:280px; height:340px; }
-  .project-card:has(.case-study[open]) .details-hint { display:inline; }
-  .project-card:has(.case-study[open]) .details-hint+.expand-icon { margin-left:8px; }
-}
 @media(max-width:1000px) {
   .shell { width:calc(100% - 64px); }
   .hero { padding-top:132px; }
-  .project-list { gap:26px; }
-  .project-preview { padding:14px; margin:12px 12px 0; }
-  .preview-image { height:220px; }
-  .project-copy { padding:26px; }
   .about-grid { gap:50px; }
   .contact-grid { gap:45px; }
   .contact-form { padding:28px; }
@@ -206,16 +132,6 @@ input::placeholder,textarea::placeholder { color:#776681; }
   .hero { padding:116px 0 70px; }
   .hero-foot { margin-top:32px; }
   .hero-actions { gap:22px; margin-top:30px; }
-  .projects-section { padding-top:36px; }
-  .project-list { grid-template-columns:1fr; gap:32px; }
-  .project-card:nth-child(n) { transform:none; }
-  .project-preview { padding:18px; margin:16px 16px 0; }
-  .preview-image { height:270px; }
-  .project-copy { padding:28px 32px; }
-  .project-copy h3 { font-size:2rem; }
-  .case-content { padding:28px; }
-  .case-intro { grid-template-columns:1fr; gap:26px; }
-  .additional-project { grid-template-columns:1fr 1.8fr; gap:30px; margin-top:40px; }
   .about-band { padding-block:64px; }
   .about-grid { gap:32px; grid-template-columns:1fr; }
   .about-grid h2 br { display:none; }
@@ -240,15 +156,7 @@ input::placeholder,textarea::placeholder { color:#776681; }
   .hero-foot { font-size:.72rem; margin-top:28px; }
   .section-heading { margin-bottom:30px; }
   .eyebrow { font-size:.7rem; }
-  .project-preview { padding:14px; margin:12px 12px 0; }
-  .preview-image { height:210px; }
-  .project-copy { padding:26px; }
-  .project-copy h3 { font-size:1.85rem; }
-  .project-description { font-size:.9rem; }
-  .case-study>summary { padding:20px 26px; }
-  .case-content { padding:26px; font-size:.86rem; }
-  .stack-grid,.timeline,.skills-grid { grid-template-columns:1fr; }
-  .additional-project { grid-template-columns:1fr; gap:20px; }
+  .timeline,.skills-grid { grid-template-columns:1fr; }
   .about-grid h2 { font-size:2.7rem; }
   .contact-copy h2 { font-size:2.65rem; }
   .email-link { font-size:1rem; gap:20px; }
