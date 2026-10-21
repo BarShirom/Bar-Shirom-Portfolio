@@ -1,32 +1,8 @@
 ﻿import { projects } from '../../data/projectsData';
 import type { Project } from '../../data/projectsData';
 import ProjectIllustration from './ProjectIllustrations';
+import ProjectActions from './ProjectActions';
 import './Portfolio.css';
-
-function PrototypeEvidence({ project }: { project: Project }) {
-    const image = project.featuredImage;
-    if (!image) return null;
-
-    return <details className="work-evidence">
-        <summary>View prototype screens<span className="work-evidence-toggle" aria-hidden="true">+</span></summary>
-        <div className="work-evidence-panel">
-            <figure>
-                <figcaption>Local demo · Synthetic data</figcaption>
-                <a href={image.src} target="_blank" rel="noreferrer" aria-label="Open owner-pricing screenshot at full size (opens in a new tab)">
-                    <img src={image.src} alt={image.alt} width={840} height={2080} loading="lazy"/>
-                </a>
-            </figure>
-            <div className="work-evidence-context">
-                <p className="work-evidence-label">Owner pricing</p>
-                <p>Owner pricing keeps the partial calculation and work needing manual pricing visible. The prototype interface is in Hebrew.</p>
-                <a href={image.src} target="_blank" rel="noreferrer">Open owner-pricing screen at full size<span className="sr-only"> (opens in a new tab)</span> ↗</a>
-                <ul aria-label="More prototype screens">{project.gallery?.filter(capture => capture.src !== image.src).map(capture => <li key={capture.src}>
-                    <a href={capture.src} target="_blank" rel="noreferrer">{capture.caption}<span className="sr-only"> Open full-size image in a new tab.</span></a>
-                </li>)}</ul>
-            </div>
-        </div>
-    </details>;
-}
 
 function ProjectDetails({ project }: { project: Project }) {
     return <details className="work-details">
@@ -63,17 +39,13 @@ function ProjectFeature({ project, index }: { project: Project; index: number })
                 <div className="work-flow">
                     <h4 className={project.workflowLabel ? undefined : 'sr-only'}>{project.workflowLabel ?? 'Workflow'}</h4>
                     <ol>{project.workflow.map(step => <li key={step}>{step}</li>)}</ol>
+                    {project.workflowNote && <p className="work-current-build">{project.workflowNote}</p>}
                 </div>
                 <ul className="work-tech" aria-label={'Selected technologies for ' + project.name}>{project.tech.map(tech => <li key={tech}>{tech}</li>)}</ul>
             </div>
             <ProjectIllustration id={project.id}/>
         </div>
-        {(project.source || project.featuredImage) && <div className="work-actions">
-            {project.source && <a className="work-source" href={project.source} target="_blank" rel="noreferrer">
-                View source <span aria-hidden="true">↗</span><span className="sr-only"> for {project.name} (opens in a new tab)</span>
-            </a>}
-            <PrototypeEvidence project={project}/>
-        </div>}
+        <ProjectActions project={project}/>
         <ProjectDetails project={project}/>
     </article>;
 }

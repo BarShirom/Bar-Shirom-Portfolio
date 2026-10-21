@@ -14,9 +14,11 @@ export interface Project {
     currentBuild?: string;
     workflow: string[];
     workflowLabel?: string;
+    workflowNote?: string;
     tech: string[];
     stack?: { category: string; items: string }[];
     source?: string;
+    demo?: string;
     decisions: string[];
     verification: string;
     next: string;
@@ -38,23 +40,27 @@ export const projects: Project[] = [
         name: 'Moving Services Sales Agent',
         category: 'Applied AI / Sales workflow',
         tagline: 'From customer conversations to owner-approved quotes.',
-        description: 'A local prototype for handling incomplete moving enquiries, collecting useful details, and preparing quotes. It keeps calculated costs and unpriced work visible so the business owner can review the full scope.',
+        description: 'An AI-assisted sales workflow that turns incomplete moving enquiries into structured leads and owner-approved quotes. The public demo covers information collection, deterministic pricing, owner review and customer acceptance.',
         engineeringDistinction: 'AI extracts facts. Rules calculate prices. The owner approves.',
-        workflow: ['Message', 'Move details', 'Price proposal', 'Owner review', 'Acceptance'],
-        tech: ['React', 'TypeScript', 'Node.js / Express', 'OpenAI API', 'Zod', 'Docker'],
+        currentBuild: 'Public demo deployed. Lead and conversation sessions are temporary and held in memory.',
+        workflow: ['Customer message', 'Structured details', 'Pricing recommendation', 'Owner review & approval', 'Customer acceptance', 'Pending manual coordination'],
+        workflowNote: 'Acceptance does not reserve a date or crew.',
+        tech: ['React', 'TypeScript', 'Node.js / Express', 'OpenAI API', 'Zod', 'Docker', 'AWS'],
         stack: [
             { category: 'Interface', items: 'React, TypeScript, Vite and Hebrew RTL layouts.' },
             { category: 'API and extraction', items: 'Node.js, Express, OpenAI Responses API, Structured Outputs and Zod.' },
-            { category: 'Tests and runtime', items: 'Node.js test runner, offline evaluations, Docker Compose and Caddy.' },
+            { category: 'Tests and deployment', items: 'Node.js test runner, offline evaluations, Docker Compose, Caddy HTTPS, AWS Lightsail and ECR.' },
         ],
         source: 'https://github.com/BarShirom/moving-services-sales-agent',
+        demo: 'https://sales.barshirom.com/',
         decisions: [
             'OpenAI Structured Outputs constrain extraction to a schema. Zod and domain checks validate values before lead updates; application logic tracks missing details and chooses follow up questions.',
             'Deterministic rules calculate supported costs. Unpriced work stays visible so the owner can confirm the full scope and final price before sending a quote.',
             'Versioned quotes bind acceptance to the approved scope. Acceptance creates a pending-coordination summary without reserving a date or crew.',
+            'Docker Compose packages the interface and API for the AWS Lightsail demo, with images in ECR and Caddy serving HTTPS.',
         ],
         verification: 'Regression tests reject outdated quotes after move details change and require owner acknowledgement of unpriced work before finalizing a partial calculation. Offline tests use fixture responses; they do not measure live model accuracy.',
-        next: 'Local prototype with in-memory sessions. Persistence and external integrations are planned.',
+        next: 'Add persistent business records and external integrations for follow-up and coordination.',
         featuredImage: agentGallery[2],
         gallery: agentGallery,
     },
